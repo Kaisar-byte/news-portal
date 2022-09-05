@@ -12,3 +12,7 @@
 .nav-item {
     padding: 10px
 }
+
+.container {
+    border: 0px solid;
+}
