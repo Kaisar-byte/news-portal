@@ -32,7 +32,6 @@ const loadNews = (category_id) => {
         .then(data => displayNews(data.data))
 }
 
-
 const displayNews = news => {
     const newsContainer = document.getElementById('card');
     newsContainer.innerHTML = ``;
