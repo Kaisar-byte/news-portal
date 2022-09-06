@@ -38,8 +38,6 @@ const displayNews = news => {
     const noNews = document.getElementById('no-data-found');
     if (news.length === 0 && news.length === null) {
         noNews.classList.add('d-none')
-
-
     }
     else {
         noNews.classList.remove('d-none');
