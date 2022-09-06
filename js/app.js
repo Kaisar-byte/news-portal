@@ -8,7 +8,9 @@ const loadNewsCatagory = () => {
 
 const displayCatagory = (category) => {
     const catagoryContainer = document.getElementById('nav');
-    const noNews = document.getElementById('no-data-found');
+
+    // console.log(category)
+
     category.forEach(category => {
         const catDiv = document.createElement('li');
         catDiv.classList.add('nav-item');
@@ -33,25 +35,34 @@ const loadNews = (category_id) => {
 }
 
 const displayNews = news => {
+    const noNews = document.getElementById('no-data-found');
+    if (news.length === "0" && news.length === null) {
+        noNews.classList.add('d-none')
+    }
+    else {
+        noNews.classList.remove('d-none');
+        noNews.innerText = `${news.length} news found for category `;
+    }
+    console.log(news)
     const newsContainer = document.getElementById('card');
     newsContainer.innerHTML = ``;
     toggleSpinner(true);
     news.forEach(news => {
-        console.log(news)
+        // console.log(news)
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('row');
         newsDiv.innerHTML = `
         <div class="card mt-3 mx-auto">
         <div class="row justify-content-between">
             <div class="col-md-4">
-                <img src="${news.image_url}" class="img-fluid rounded-start" alt="...">
+                <img src="${news.image_url}" class="img-fluid rounded-start" alt="..." style="height:100%;">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${news.title}</h5>
                     <p class="card-text">${news.details.slice(0, 300).concat('...')}</p>
                 </div>
-                <div class="row mt-4">
+                <div class="row">
                     <div class="col d-flex flex-row gap-2">
                         <img src="${news.author.img}" class="img-fluid rounded-circle" style="width: 50px; height: 50px" alt="">
                         <div class="d-flex flex-column gap-1>
@@ -107,3 +118,5 @@ const toggleSpinner = isLoading => {
         loader.classList.add('d-none')
     }
 }
+
+loadNews('08')

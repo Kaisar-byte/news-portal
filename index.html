@@ -19,10 +19,69 @@
                 <p><span class="bg-primary px-4 py-2 border-1 rounded-2 text-white">Dhaka</span> News</p>
             </div>
             <div class="d-flex justify-content-center">
-                <p><span><a href="#" class="text-decoration-none px-4">News</a></span></p>
+                <p><span><a href="#" onclick="loadNews('08')" class="text-decoration-none px-4">News</a></span></p>
                 <p><span><a href="#" class="text-decoration-none" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">Blogs</a></span></p>
             </div>
+
+            <!-- Modal -->
+            <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <h5 class="text-bg-info text-justify p-2 rounded">What is the difference
+                                    between var,
+                                    let and
+                                    const
+                                    keywords in
+                                    JavaScript?</h5>
+                                <p class="fs-6 text-bg-primary text-justify p-2 rounded">The differences between var,
+                                    let, and const variable
+                                    declaration in
+                                    JavaScript
+                                    include:
+                                    Variables declared with var and const are scoped to the immediate function body.
+                                    Variables declared with the var keyword are hoisted. Hoisting means that the
+                                    variable
+                                    can be accessed in their enclosing scope even before they are declared.
+                                    Variables declared with the let keyword are block-scoped, which means the
+                                    variables
+                                    will
+                                    have scope to the immediate enclosing block.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-bg-info text-justify p-2 rounded">What is the difference between regular
+                                    and arrow function?</h5>
+                                <p class="fs-6 text-bg-primary text-justify p-2 rounded">The first and most obvious
+                                    difference between arrow functions and regular functions
+                                    is their syntax. Not only do they look different, but arrow functions also provide
+                                    an implicit return shorthand and allow parenthesis around a single argument to be
+                                    omitted.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-bg-info text-justify p-2 rounded">What is the difference between map,
+                                    filter, find and forEach function?</h5>
+                                <p class="fs-6 text-bg-primary text-justify p-2 rounded">The main difference between
+                                    this two methods is that forEach allows you to change
+                                    elements of original array and returns undefined and map does not allow you to
+                                    change original array and intended for making new array based on original one.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+
+
 
 
         </section>
@@ -36,13 +95,11 @@
         </section>
     </header>
     <main>
-        <div id="no-data-found" class="d-none">
-            <h2 class="text-warning">No news category are found</h2>
+        <div id="no-data-found" class="d-none container">
+            <h2 class="text-warning fs-2">No news on this category are found</h2>
         </div>
-        <section class="news-container container mt-4 mx-8">
-            <div id="card" class="card mb-3 mx-auto">
+        <section id="card" class="news-container container mt-4 mx-8">
 
-            </div>
         </section>
         <section class="modal">
 
