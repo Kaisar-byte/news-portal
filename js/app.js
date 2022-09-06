@@ -36,14 +36,16 @@ const loadNews = (category_id) => {
 
 const displayNews = news => {
     const noNews = document.getElementById('no-data-found');
-    if (news.length === "0" && news.length === null) {
+    if (news.length === 0 && news.length === null) {
         noNews.classList.add('d-none')
+
+
     }
     else {
         noNews.classList.remove('d-none');
         noNews.innerText = `${news.length} news found for category `;
     }
-    console.log(news)
+    // console.log(news)
     const newsContainer = document.getElementById('card');
     newsContainer.innerHTML = ``;
     toggleSpinner(true);
